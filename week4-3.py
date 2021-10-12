@@ -7,6 +7,7 @@ img = cv2.imread('data/KakaoTalk_Photo_2021-09-08-20-29-00.png', 0).astype(np.fl
 
 fft = cv2.dft(img, flags=cv2.DFT_COMPLEX_OUTPUT)
 fft_shift = np.fft.fftshift(fft,axes=[0,1])
+
 sz = 25
 mask = np.zeros(fft.shape, np.uint8)
 mask[img.shape[0]//2-sz:img.shape[0]//2+sz,
