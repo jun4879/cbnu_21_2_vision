@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf4bf6ec-9c2d-42e2-bfd5-9d41cf54acb6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/homework4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/cbnu_21_2_vision.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cbnu_21_2_vision.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,8 +142,8 @@
       <list>
         <item itemvalue="Python.homework4" />
         <item itemvalue="Python.homework3" />
-        <item itemvalue="Python.week4-3" />
         <item itemvalue="Python.homework2" />
+        <item itemvalue="Python.week4-3" />
         <item itemvalue="Python.homework1" />
       </list>
     </recent_temporary>
