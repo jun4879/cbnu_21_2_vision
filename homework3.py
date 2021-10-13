@@ -31,24 +31,54 @@ gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 fft = np.fft.fft2(gray)
 fft_shift = np.fft.fftshift(fft, axes=[0,1])
 
-# low-pass filter
-low_fshift = filter_radius(fft_shift, rad=50, low=True)
+image_to_show = np.copy(img)
+LPF_mode = True
+radius = 50
 
-# low-pass filter inverse fft
-low_ishift = np.fft.ifftshift(low_fshift)
-low_img = np.fft.ifft2(low_ishift)
-low_img = np.abs(low_img)
+cv2.namedWindow('lena')
+finish = False
 
-plt.imshow(low_img, cmap='gray')
-plt.show()
+while not finish:
+    cv2.imshow("lena", image_to_show)
+    key = cv2.waitKey(1)
 
-# high-pass filter
-high_fshift = filter_radius(fft_shift, rad=50, low=False)
+    if key == ord('h'):
+        LPF_mode = False
+        fshift = filter_radius(fft_shift, rad=radius, low=LPF_mode)
+        # inverse fft
+        ifftshift = np.fft.ifftshift(fshift)
+        transformed_img = np.fft.ifft2(ifftshift)
+        transformed_img = np.abs(transformed_img)
+        plt.imshow(transformed_img, cmap='gray')
+        plt.show()
 
-# high-pass filter inverse fft
-high_ishift = np.fft.ifftshift(high_fshift)
-high_img = np.fft.ifft2(high_ishift)
-high_img = np.abs(high_img)
+    if key == ord('l'):
+        LPF_mode = True
+        fshift = filter_radius(fft_shift, rad=radius, low=LPF_mode)
+        # inverse fft
+        ifftshift = np.fft.ifftshift(fshift)
+        transformed_img = np.fft.ifft2(ifftshift)
+        transformed_img = np.abs(transformed_img)
+        plt.imshow(transformed_img, cmap='gray')
+        plt.show()
 
-plt.imshow(high_img, cmap='gray')
-plt.show()
+    if key == ord('r'):
+        radius = int(input("반지름 : "))
+        fshift = filter_radius(fft_shift, rad=radius, low=LPF_mode)
+        # inverse fft
+        ifftshift = np.fft.ifftshift(fshift)
+        transformed_img = np.fft.ifft2(ifftshift)
+        transformed_img = np.abs(transformed_img)
+        plt.imshow(transformed_img, cmap='gray')
+        plt.show()
+
+    if key == 27:
+        print("ESC Pressed")
+        break
+
+
+cv2.destroyAllWindows()
+
+
+
+
