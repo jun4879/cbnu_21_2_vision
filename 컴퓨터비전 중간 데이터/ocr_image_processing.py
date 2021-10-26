@@ -2,13 +2,11 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-#file_path  = './OCR데이터셋/dataset/classification/error_img/error_19_6_5.png'
-file_path = './OCR데이터셋/dataset/digit_data/3/00838_4.jpg'
+file_path  = './OCR데이터셋/dataset/classification/error_img/error_19_6_5.png'
 img = cv2.imread(file_path, 0)
 red_img = cv2.imread(file_path)
 
-#thr, mask = cv2.threshold(img, 200, 1, cv2.THRESH_BINARY)
-thr, mask = cv2.threshold(img, -1, 1, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
+thr, mask = cv2.threshold(img, 200, 1, cv2.THRESH_BINARY)
 
 plt.figure(figsize=(10,4))
 plt.subplot(131)
