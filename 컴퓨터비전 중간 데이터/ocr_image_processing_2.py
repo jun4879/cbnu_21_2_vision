@@ -7,7 +7,7 @@ img = cv2.imread(file_path, 0)
 red_img = cv2.imread(file_path)
 
 KSIZE = 11
-ALPHA = 3  # 바꿔서 테스트
+ALPHA = 3
 kernel = cv2.getGaussianKernel(KSIZE,0)
 kernel = - ALPHA * kernel @ kernel.T
 kernel[KSIZE//2, KSIZE//2] += 1+ALPHA
