@@ -15,7 +15,7 @@ budapest_img = cv2.imread(budapest_file_path, cv2.IMREAD_GRAYSCALE)
 newspaper_img = cv2.imread(newspaper_file_path, cv2.IMREAD_GRAYSCALE)
 s_img = cv2.imread(s_file_path, cv2.IMREAD_GRAYSCALE)
 
-# Canny Edge - 수치 조절하기
+# Canny Edge
 boat_canny = cv2.Canny(boat_img, 50, 200)
 budapest_canny = cv2.Canny(budapest_img, 50, 200)
 newspaper_canny = cv2.Canny(newspaper_img, 50, 200)
@@ -41,11 +41,11 @@ plt.imshow(s_canny, cmap='gray')
 plt.tight_layout()
 plt.show()
 
-# Harris Corner - 수치 조절하기
-boat_harris = cv2.cornerHarris(boat_img, 2, 3, 0.04)
-budapest_harris = cv2.cornerHarris(budapest_img, 2, 3, 0.04)
-newspaper_harris = cv2.cornerHarris(newspaper_img, 2, 3, 0.04)
-s_harris = cv2.cornerHarris(s_img, 2, 3, 0.04)
+# Harris Corner
+boat_harris = cv2.cornerHarris(boat_img, 10, 3, 0.06)
+budapest_harris = cv2.cornerHarris(budapest_img, 6, 3, 0.06)
+newspaper_harris = cv2.cornerHarris(newspaper_img, 6, 3, 0.06)
+s_harris = cv2.cornerHarris(s_img, 6, 3, 0.06)
 
 plt.figure()
 plt.subplot(141)
