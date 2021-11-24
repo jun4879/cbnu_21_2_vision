@@ -36,7 +36,7 @@ budapest_ret, budapest_pano = stitcher.stitch(budapest_images)
 newspaper_ret, newspaper_pano = stitcher.stitch(newspaper_images)
 s_ret, s_pano = stitcher.stitch(s_images)
 
-boat_pano_res = cv2.resize(boat_pano, dsize=(0, 0), fx=0.1, fy=0.1)
+boat_pano_res = cv2.resize(boat_pano, dsize=(0, 0), fx=0.2, fy=0.2)
 cv2.imshow('boat panorama', boat_pano_res)
 cv2.imshow('budapest panorama', budapest_pano)
 cv2.imshow('newspaper panorama', newspaper_pano)
