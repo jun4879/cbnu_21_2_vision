@@ -29,41 +29,18 @@ s_images = []
 s_images.append(cv2.imread('./data/s1.jpg', cv2.IMREAD_COLOR))
 s_images.append(cv2.imread('./data/s2.jpg', cv2.IMREAD_COLOR))
 
-stitcher = cv2.Stitcher()
+stitcher = cv2.Stitcher.create(cv2.Stitcher_PANORAMA)
 
 boat_ret, boat_pano = stitcher.stitch(boat_images)
 budapest_ret, budapest_pano = stitcher.stitch(budapest_images)
 newspaper_ret, newspaper_pano = stitcher.stitch(newspaper_images)
 s_ret, s_pano = stitcher.stitch(s_images)
 
-if boat_ret == cv2.STITCHER_OK:
-    boat_pano_res = cv2.resize(boat_pano, dsize=(0, 0), fx=0.2, fy=0.2)
-    cv2.imshow('boat panorama', boat_pano_res)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-else:
-    print("boat pano Error")
+boat_pano_res = cv2.resize(boat_pano, dsize=(0, 0), fx=0.1, fy=0.1)
+cv2.imshow('boat panorama', boat_pano_res)
+cv2.imshow('budapest panorama', budapest_pano)
+cv2.imshow('newspaper panorama', newspaper_pano)
+cv2.imshow('s panorama', s_pano)
 
-if budapest_ret == cv2.STITCHER_OK:
-    budapest_pano_res = cv2.resize(budapest_pano, dsize=(0, 0), fx=0.2, fy=0.2)
-    cv2.imshow('budapest panorama', budapest_pano_res)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-else:
-    print("budapest pano Error")
-
-if newspaper_ret == cv2.STITCHER_OK:
-    newspaper_pano_res = cv2.resize(newspaper_pano, dsize=(0, 0), fx=0.2, fy=0.2)
-    cv2.imshow('budapest panorama', newspaper_pano_res)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-else:
-    print("newspaper pano Error")
-
-if s_ret == cv2.STITCHER_OK:
-    s_pano_res = cv2.resize(s_pano, dsize=(0, 0), fx=0.2, fy=0.2)
-    cv2.imshow('budapest panorama', s_pano_res)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-else:
-    print("s pano Error")
+cv2.waitKey()
+cv2.destroyAllWindows()
