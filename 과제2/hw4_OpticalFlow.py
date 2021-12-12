@@ -27,7 +27,6 @@ for i, (p, n) in enumerate(zip(prevMv, nextMv)):
     cv2.line(lines, (px, py), (nx, ny), color[i].tolist(), 2)
     cv2.circle(dog_B_gray, (nx, ny), 2, color[i].tolist(), -1)
 
-# Lucas-Kanade 영상 출력
 dog_LK_img = cv2.add(dog_A_gray, lines)
 cv2.imshow("OpticalFlow - Lucas-Kanade", dog_LK_img)
 cv2.waitKey()
@@ -48,7 +47,12 @@ def display_flow(img, flow, stride=40):
     cv2.waitKey()
     cv2.destroyAllWindows()
 
-# Farneback 영상 출력
+
 farnebackFlow = cv2.calcOpticalFlowFarneback(dog_A_gray, dog_B_gray, None, 0.5, 3, 15, 3, 5, 1.1,
                                              cv2.OPTFLOW_FARNEBACK_GAUSSIAN)
 display_flow(dog_A_gray, farnebackFlow)
+
+flow_DualTVL1 = cv2.optflow_DualTVL1OpticalFlow()
+dualtvl1_optflow = flow_DualTVL1.calc(dog_A_gray, dog_B_gray, None)
+flow_DualTVL1.setUseInitialFlow(True)
+display_flow(dog_A_gray, dualtvl1_optflow)
