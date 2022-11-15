@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf4bf6ec-9c2d-42e2-bfd5-9d41cf54acb6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/과제2/hw3_Panorama.py" beforeDir="false" afterPath="$PROJECT_DIR$/과제2/hw3_Panorama.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/과제2/hw4_OpticalFlow.py" beforeDir="false" afterPath="$PROJECT_DIR$/과제2/hw4_OpticalFlow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/컴퓨터비전 기말/svm_learning_final_project.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/컴퓨터비전 기말/svm_learning_final_project.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/컴퓨터비전 기말/svm_predict_final_project.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/컴퓨터비전 기말/svm_predict_final_project.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
